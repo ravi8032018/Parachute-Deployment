@@ -98,11 +98,21 @@ This architecture decouples the user interface (web, ESP8266 AP) from the physic
 
 ```text
 Parachute-Deployment/
-  ├─ tx_esp8266_web/         # Transmitter: ESP8266 + Web UI + NRF24L01
-  │   └─ tx_esp8266_web.ino
-  ├─ rx_servo_nrf/           # Receiver: NRF24L01 + Servo
-  │   └─ rx_servo_nrf.ino
-  ├─ legacy_mpu_phase1/      # Optional: IMU-based free-fall prototype
-  │   └─ mpu_freefall_esp8266.ino
-  ├─ README.md
-  └─ docs/                   # Images, diagrams, notes (optional)
+  ├─ phase1_imu_autodeploy/
+  │   ├─ mpu_scanner/              # optional: I2C / IMU scanner sketch
+  │   │   └─ mpu_scanner.ino
+  │   ├─ esp8266_imu_webui/        # main phase 1 firmware
+  │   │   └─ esp8266_imu_webui.ino
+  │   └─ README.md                 # short note for phase 1
+  │
+  ├─ phase2_nrf_wireless/
+  │   ├─ tx_esp8266_web/           # transmitter (ESP8266 + Web UI + NRF24)
+  │   │   └─ tx_esp8266_web.ino
+  │   ├─ rx_servo_nrf/             # receiver (NRF24 + servo)
+  │   │   └─ rx_servo_nrf.ino
+  │   └─ README.md                 # short note for phase 2
+  │
+  ├─ README.md                     # main project README
+  └─ docs/                         # diagrams, photos, notes (optional)
+
+
